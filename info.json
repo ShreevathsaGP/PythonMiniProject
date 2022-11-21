@@ -1,0 +1,16 @@
+{
+    "//info.json": {},
+    "Sorting": {
+        "Merge Sort": "<b>Merge Sort (ascending)</b><br>Best Time: <i>O(nlogn)</i><br>Avg. Time: <i>O(nlogn)</i><br>Worst Time: <i>O(nlogn)</i><br>Space: <i>O(n)</i><br>",
+        "Heap Sort": "<b>Heap Sort (descending)</b><br>Best Time: <i>O(nlogn)</i><br>Avg. Time: <i>O(nlogn)</i><br>Worst Time: <i>O(nlogn)</i><br>Space: <i>O(1)</i><br>"
+    },
+    "Graph Search": {
+        "Depth First": "<b>Depth First Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>",
+        "Breadth First": "<b>Breadth First Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>"
+    },
+    "Maze Solving": {
+        "Dijkstra": "<b>Dijkstra's Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>",
+        "A* Search": "<b>A* Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>"
+    }
+}
+
