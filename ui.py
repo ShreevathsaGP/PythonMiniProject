@@ -4,6 +4,7 @@
 import os
 import math
 import json
+import pickle
 import random
 import pygame
 from collections import deque
@@ -78,7 +79,7 @@ class UI:
         self.slide_rect = pygame.Rect(Options.menu_width * Options.menu_x_buffer, 
                 self.button_rect.top - (2 * self.y_buffer )- Options.line_width - slider_height, 
                 slider_width, slider_height)
-        self.slider = UIHorizontalSlider(self.slide_rect, 15, (5, 25), self.manager)
+        self.slider = UIHorizontalSlider(self.slide_rect, Options.slider_default, Options.slider_range, self.manager)
 
         # text box 1
         box_percentage = 0.3
@@ -198,17 +199,23 @@ class UI:
     def set_button_text(self, text):
         self.button.set_text(text)
         self.button_text = text
-    
-    def toggle_button(self):
-        if self.button_text == "Start":
-            self.set_button_text("Running")
-        else:
-            self.set_button_text("Start")
 
     def enable_extras(self):
         self.compute_button.enable()
         self.input_1.enable()
         self.input_2.enable()
+
+    def disable_start(self):
+        self.button.disable()
+
+    def enable_start(self):
+        self.button.enable()
+
+    def disable_compute(self):
+        self.compute_button.disable()
+
+    def enable_compute(self):
+        self.compute_button.enable()
 
     def disable_extras(self):
         self.compute_button.disable()
@@ -220,15 +227,16 @@ class UI:
         self.options.enable()
         self.slider.enable()
 
-        self.toggle_button()
         self.button.enable()
+
+        self.set_button_text("Start")
 
     def disable(self):
         self.algo_dropdown.disable()
         self.options.disable()
         self.slider.disable()
 
-        self.toggle_button()
+        self.set_button_text("Running")
         self.button.disable()
 
         self.disable_extras()
@@ -248,8 +256,10 @@ class UI:
             fps = str(self.clock.get_fps())
             fps = fps.ljust(10, '0') if len(fps) < 10 else fps[:11]
             self.fps_counter.set_text(f"FPS: {fps}")
-            
+
+    def background_blit(self):
+        self.window_surface.blit(self.background, (0,0)) 
 
     def render(self):
-        self.window_surface.blit(self.background, (0,0)) 
+        self.background_blit()
         self.manager.draw_ui(self.window_surface)

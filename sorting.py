@@ -4,6 +4,8 @@
 import os
 import math
 import time
+import json
+import pickle
 import random
 import pygame
 from collections import deque
@@ -268,6 +270,7 @@ class Sorting:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+                pygame.quit()
                 exit() # relevant for sorting but not in some other places
 
             self.ui.manager.process_events(event)
@@ -310,13 +313,6 @@ class Sorting:
                     # for i in range(self.size):
                     #     self.fill_colours[i] = Options.heap_sort_colours[-1]
 
-                    self.delay = 0
-
-                    # restart ui
-                    self.ui.enable()
-                    self.start = False
-                    self.running = True # cannot close the program
-                
                 elif self.ui.get_dropdown_algo() == Options.sorting_options[1]:
                     self.reset_colours()
                     self.delay = int((Options.frame_rate // Options.sorting_fps_delay_ratio) * (0.5))
@@ -324,13 +320,11 @@ class Sorting:
                     # heap sort
                     self.heap_sort()
 
-                    self.delay = 0
+                self.delay = 0
 
-                    # restart ui
-                    self.ui.enable()
-                    self.start = False
-                    self.running = True # cannot close the program
+                # restart ui
+                self.ui.enable()
+                self.start = False
+                self.running = True # cannot close the program
 
         return self.running
-
-

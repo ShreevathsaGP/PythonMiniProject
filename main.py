@@ -3,6 +3,8 @@
 # imports
 import os
 import math
+import json
+import pickle
 import random
 import pygame
 from collections import deque
@@ -15,6 +17,7 @@ from globy import *
 from maze import MazeSolve
 from sorting import Sorting
 from graph import GraphSearch
+from graph_tools import *
 
 # pygame gui
 import pygame_gui
@@ -68,6 +71,7 @@ class AlgorithmVisualizer:
             
         else:
             while self.running:
+                self.ui.enable_start()
                 self.running = self.topic_objects[self.current_topic].run()
                 self.current_topic = self.ui.get_dropdown_topic()
 
