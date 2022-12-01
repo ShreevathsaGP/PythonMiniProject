@@ -222,6 +222,7 @@ class GraphSearch:
                 self.current_vertices[vertex] = 1
             elif vertex == self.graph.end_vertex:
                 self.current_vertices[vertex] = 2
+                break
             else:
                 self.current_vertices[vertex] = 5
             self.update_render()
@@ -275,6 +276,7 @@ class GraphSearch:
                 self.current_vertices[vertex] = 1
             elif vertex == self.graph.end_vertex:
                 self.current_vertices[vertex] = 2
+                break
             else:
                 self.current_vertices[vertex] = 5
             self.update_render()
