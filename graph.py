@@ -87,20 +87,6 @@ class GraphSearch:
         self.current_vertices[self.graph.end_vertex] = 2
 
     def render(self):
-        # # print un-discovered edges
-        # for i, j in self.undiscovered_edges:
-        #     colour = Options.edge_c_map[0]
-        #     p1 = self.graph.get_vertex_center(i)
-        #     p2 = self.graph.get_vertex_center(j)
-        #     pygame.draw.line(self.ui.get_window(), colour, p1, p2)
-
-        # # print discovered edges
-        # for i, j in self.discovered_edges:
-        #     colour = Options.edge_c_map[1]
-        #     p1 = self.graph.get_vertex_center(i)
-        #     p2 = self.graph.get_vertex_center(j)
-        #     pygame.draw.line(self.ui.get_window(), colour, p1, p2)
-
         # print edges
         for edge in self.current_edges:
             colour = Options.edge_c_map[self.current_edges[edge]]
@@ -234,20 +220,15 @@ class GraphSearch:
             # visualize
             edge = tuple(sorted((current_vertex, self.parents[current_vertex])))
             self.current_edges[(self.parents[current_vertex], current_vertex)] = 2
+
+            if current_vertex != self.graph.end_vertex:
+                self.current_vertices[current_vertex] = 6
+
             self.update_render()
 
             current_vertex = self.parents[current_vertex]
 
     def dfs(self):
-        # explored, stack = set(start), [start]
-
-        # while stack:
-        #     v = stack.pop()
-        #     explored.add(v)
-        #     for adj in reversed(graph[v]):
-        #         if adj not in explored:
-        #             stack.append(adj)
-
         visited = {self.graph.start_vertex}
         stack = [self.graph.start_vertex]
         self.parents = {self.graph.start_vertex: None}
@@ -289,6 +270,10 @@ class GraphSearch:
             # visualize
             edge = tuple(sorted((current_vertex, self.parents[current_vertex])))
             self.current_edges[(self.parents[current_vertex], current_vertex)] = 2
+
+            if current_vertex != self.graph.end_vertex:
+                self.current_vertices[current_vertex] = 6
+
             self.update_render()
 
             current_vertex = self.parents[current_vertex]
@@ -328,36 +313,3 @@ class GraphSearch:
                 self.running = True
 
         return self.running
-
-# # the below only works with lines (not line segments)
-# def check_overlap_old(self, p1, p2, centre, radius):
-#     # convert into cartesian
-#     p1 = [p1[0], -1 * p1[1]]
-#     p2 = [p2[0], -1 * p2[1]]
-#     centre = [centre[0], -1 * centre[1]]
-
-#     # circle values: (x - h)^2 + (y - k)^2 = r^2
-#     h = centre[0]
-#     k = centre[1]
-#     r = radius
-
-#     # m = infinite
-#     if p1[0] == p2[0]:
-#         higher_y = max(p1[1], p2[1])
-#         lower_y = min(p1[1], p2[1])
-
-#         return ((h - r) <= p1[0] <= (h + r)) and (higher_y - r > k > lower_y + r)
-
-#     # line values: y = mx + e
-#     m = (p2[1] - p1[1]) / (p2[0] - p1[0])
-#     e = (-1 * m * p1[0]) + p1[1]
-
-#     # quadratic equation: [1 + m^2]x^2 + [2m(e - k) - 2h]x + [h^2 + (e - k)^2 - r^2] = 0
-#     a = 1 + (m ** 2)
-#     b = (2 * m * (e - k)) - 2 * h
-#     c = (h ** 2) + ((e - k) ** 2) - (r ** 2)
-
-#     # determinant d = b^2 - 4ac
-#     d = (b ** 2) - (4 * a * c)
-
-#     return d >= 0 # true if there is an overlap

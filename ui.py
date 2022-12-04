@@ -35,6 +35,11 @@ class UI:
             self.info = json.load(f)
 
         # initialize pygame
+
+        # 4: UserWarning: Finding font with id: fira_code_italic_14 that is not already loaded.
+        # Preload this font with {'name': 'fira_code', 'point_size': 14, 'style': 'italic'}
+        # warnings.warn(warning_string, UserWarning)
+
         pygame.init()
         pygame.display.set_caption("Algorithm Visualizer")
         self.clock = pygame.time.Clock()

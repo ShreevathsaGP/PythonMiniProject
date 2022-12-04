@@ -49,7 +49,7 @@ class Options:
 
     # topic
     topics = ["Sorting", "Graph Search", "Maze Solving"]
-    start_topic = 1
+    start_topic = 2
 
     # visualization area
     main_x = menu_width + line_width
@@ -81,12 +81,19 @@ class Options:
 
     vertex_c_map = {0: pygame.Color(184, 191, 184), 1: pygame.Color(8, 237, 0), 2: pygame.Color(194, 2, 232),
             3: pygame.Color(252, 186, 3), 4: pygame.Color(209, 54, 23), 5: pygame.Color(2, 134, 242)}
-    # vertex_c_map => 0: regular | 1: start vertex | 2: end vertex | 3: current | 4: discovered | 5: done
-    edge_c_map = {0: pygame.Color(60, 60, 60), 1: pygame.Color(200, 200, 200), 2: pygame.Color(201, 14, 92)}
+    # vertex_c_map => 0: regular | 1: start | 2: end | 3: current | 4: discovered | 5: done | 6: path
+    edge_c_map = {0: pygame.Color(60, 60, 60), 1: pygame.Color(200, 200, 200)}
     # edge_c_map => 0: undiscovered | 1: discovered
+
+    edge_c_map[2] = vertex_c_map[6] = pygame.Color(214, 209, 69)
 
     # maze solve
     maze_options = ["Dijkstra", "A* Search"]
+    maze_buffer = math.floor(0.04 * main_height)
+    maze_colour = pygame.Color((200, 200, 200))
+    maze_thick = 1
+    maze_bg_colour = pygame.Color((30, 30, 30))
+    maze_fps_delay_ratio = 2.4
 
     # algo topics
     option_dict = {"Sorting": sorting_options, "Graph Search": graph_options, "Maze Solving": maze_options}

@@ -271,7 +271,7 @@ class Sorting:
             if event.type == pygame.QUIT:
                 self.running = False
                 pygame.quit()
-                exit() # relevant for sorting but not in some other places
+                exit()
 
             self.ui.manager.process_events(event)
 
