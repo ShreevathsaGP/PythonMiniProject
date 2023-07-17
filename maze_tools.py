@@ -136,9 +136,6 @@ class Maze:
                 (1, 1): pygame.Surface((self.node_size, self.node_size)),
                 }
 
-        # for x in self.draw_dict:
-        #     self.draw_dict[x].fill(Options.maze_bg_colour)
-
         # (0, 0)
         current = (0,0)
         base_rect = pygame.Rect(0, 0, Options.maze_thick, Options.maze_thick)

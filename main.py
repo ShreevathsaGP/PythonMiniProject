@@ -43,7 +43,7 @@ class AlgorithmVisualizer:
 
         self.new_topic = None
         self.current_topic = Options.topics[Options.start_topic]
-        self.topic_objects = {"Sorting": Sorting(self.ui), "Graph Search": GraphSearch(self.ui), "Maze Solving": MazeSolve(self.ui)}
+        self.topic_objects = {Options.topics[0]: Sorting(self.ui), Options.topics[1]: GraphSearch(self.ui), Options.topics[2]: MazeSolve(self.ui)}
 
 
     def run(self):

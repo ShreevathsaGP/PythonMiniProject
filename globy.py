@@ -86,6 +86,7 @@ class Options:
     # edge_c_map => 0: undiscovered | 1: discovered
 
     edge_c_map[2] = vertex_c_map[6] = pygame.Color(214, 209, 69)
+    edge_c_map[2] = vertex_c_map[6] = pygame.Color(199, 113, 56)
 
     # maze solve
     maze_options = ["Dijkstra", "A* Search"]
@@ -96,4 +97,4 @@ class Options:
     maze_fps_delay_ratio = 2.4
 
     # algo topics
-    option_dict = {"Sorting": sorting_options, "Graph Search": graph_options, "Maze Solving": maze_options}
+    option_dict = {topics[0]: sorting_options, topics[1]: graph_options, topics[2]: maze_options}

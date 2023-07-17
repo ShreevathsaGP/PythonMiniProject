@@ -11,6 +11,10 @@
     "Maze Solving": {
         "Dijkstra": "<b>Dijkstra's Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>",
         "A* Search": "<b>A* Search</b><br>Best Time: <i>O()</i><br>Avg. Time: <i>O()</i><br>Worst Time: <i>O()</i><br>Space: <i>O()</i><br>"
+    },
+    "Maze Generation": {
+        "Dijkstra": "The randomized Kruskal's min spanning tree algorithm is used to generate mazes. A minimum spanning tree (ie. a perfect maze).\n1. Generate all possible edges\n2. Randomly choose 2 edges, if it connects two disjoint trees (ie. paths), join them, else discard it.\n3. Repeat the above until no edges are left.",
+        "A* Search": "The randomized Kruskal's min spanning tree algorithm is used to generate mazes. A minimum spanning tree (ie. a perfect maze).\n1. Generate all possible edges\n2. Randomly choose 2 edges, if it connects two disjoint trees (ie. paths), join them, else discard it.\n3. Repeat the above until no edges are left."
     }
 }
 
