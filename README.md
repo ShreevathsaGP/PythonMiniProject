@@ -29,6 +29,10 @@ Algorithms currently supported:
 </ol>
 <br>
 
-<img src="/gifs/heap_sort.gif" width="100%" />
-<img src="/gifs/breadth_first.gif" width="100%" />
-<img src="/gifs/maze_generation.gif" width="100%" />
+https://github.com/ShreevathsaGP/PythonMiniProject/assets/59483990/9dbd1ca3-cdc1-4a7f-ab37-35bb26d2486a
+
+https://github.com/ShreevathsaGP/PythonMiniProject/assets/59483990/f8a4c801-038e-45fb-9359-7f74d0d69f61
+
+https://github.com/ShreevathsaGP/PythonMiniProject/assets/59483990/149db9c1-96b4-482a-bc6e-e2260c84dc7e
+
+
