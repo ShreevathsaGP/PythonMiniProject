@@ -27,7 +27,8 @@ Algorithms currently supported:
       </ul>
    </li>
 </ol>
+<br>
 
-<img src="/gifs/heap_sort.gif" width="100%" />
-<img src="/gifs/breadth_first.gif" width="100%" />
-<img src="/gifs/maze_generation.gif" width="100%" />
+<img src="/gifs/heap_sort_short.gif" width="100%" />
+<img src="/gifs/breadth_first_short.gif" width="100%" />
+<img src="/gifs/maze_generation_short.gif" width="100%" />
