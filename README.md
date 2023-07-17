@@ -28,6 +28,6 @@ Algorithms currently supported:
    </li>
 </ol>
 
-<img src="/gifs/heap_sort" width="100%" />
-<img src="/gifs/breadth_first" width="100%" />
-<img src="/gifs/maze_generation" width="100%" />
+<img src="/gifs/heap_sort.gif" width="100%" />
+<img src="/gifs/breadth_first.gif" width="100%" />
+<img src="/gifs/maze_generation.gif" width="100%" />
