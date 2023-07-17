@@ -1,7 +1,7 @@
 # PythonMiniProject
 
 <h2 align="center"><strong>Python Algorithm Visualizer</strong></h2>
-<p align="center"><em>Mini-project for the SEM I course [UE22CS151A]: Python For Computational Problem Solving.</em></p>
+<p align="center"><em>Mini-project for the SEM-1 Course [UE22CS151A]: Python For Computational Problem Solving.</em></p>
 
 Algorithms currently supported:
 <ol type="1">
@@ -27,7 +27,6 @@ Algorithms currently supported:
       </ul>
    </li>
 </ol>
-<br>
 
 https://github.com/ShreevathsaGP/PythonMiniProject/assets/59483990/9dbd1ca3-cdc1-4a7f-ab37-35bb26d2486a
 
